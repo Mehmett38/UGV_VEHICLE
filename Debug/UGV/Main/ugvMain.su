@@ -1,0 +1,4 @@
+../UGV/Main/ugvMain.c:22:6:ugvMain	32	static,ignoring_inline_asm
+../UGV/Main/ugvMain.c:52:6:ugvSystemInit	8	static
+../UGV/Main/ugvMain.c:70:13:qmcInit	16	static
+../UGV/Main/ugvMain.c:97:13:sx1278Init	16	static

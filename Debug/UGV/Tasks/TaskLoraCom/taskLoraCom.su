@@ -1,0 +1,2 @@
+../UGV/Tasks/TaskLoraCom/taskLoraCom.c:21:6:taskLoraCom	48	static
+../UGV/Tasks/TaskLoraCom/taskLoraCom.c:53:6:dioIrqCallback	8	static

@@ -1,0 +1,4 @@
+../UGV/Drivers/MotorDriver/MotorDrive.c:44:6:UGV_motorInit	8	static
+../UGV/Drivers/MotorDriver/MotorDrive.c:69:6:UGV_motorDrive	16	static
+../UGV/Drivers/MotorDriver/MotorDrive.c:146:13:motorUpDown	24	static
+../UGV/Drivers/MotorDriver/MotorDrive.c:215:13:motorRightLeft	32	static

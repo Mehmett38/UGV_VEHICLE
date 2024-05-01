@@ -1,0 +1,3 @@
+../Drivers/CMSIS/Include/core_cm4.h:1938:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+../UGV/Tasks/TaskSensor/taskSensor.c:22:6:taskSensor	24	static
+../UGV/Tasks/TaskSensor/taskSensor.c:62:10:qmcProc	16	static

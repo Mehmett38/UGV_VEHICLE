@@ -1,0 +1,9 @@
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:28:19:UGV_qmcInit	7
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:81:9:UGV_isDataReady	1
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:94:19:UGV_readData	2
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:109:19:UGV_getPositionAdc	8
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:165:6:UGV_setMagneticDelination	1
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:176:7:UGV_getAzimuth	2
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:195:19:UGV_interruptEnable	2
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:214:19:UGV_interruptDisable	2
+../UGV/Drivers/QMC/QMC5883/qmc5883.c:232:19:UGV_softReset	1
