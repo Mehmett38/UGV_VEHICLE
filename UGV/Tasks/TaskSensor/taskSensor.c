@@ -10,6 +10,12 @@
 #include "database.h"
 #include "MotorDrive.h"
 #include "gps.h"
+#include "crc15.h"
+
+//<<<<<<<<<<<<<<<<<<-STATIC FUNCTIONS->>>>>>>>>>>>>>
+static uint16_t qmcProc();
+static LED_STATE ledProc();
+static uint16_t crcProc(void * ptr, uint16_t len);
 
 //<<<<<<<<<<<<<<<<<<-GLOBAL VARIABLES->>>>>>>>>>>>>>
 TaskHandle_t hTaskSensor_s;
@@ -28,35 +34,45 @@ void taskSensor(void *arg)
 	for(;;)
 	{
 		//!< get azimuth from the qmc5883
-		azim = qmcProc();
-
-		//!< set the leds
-		if((rcChannel_s.channel3>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel1<=(CHANNEL_UP + CHANNEL_ERROR)))
-		{
-			loraTx.ledState = UGV_ledControl(&rcChannel_s);
-		}
-		else
-		{
-			NVIC_SystemReset();
-		}
+		loraTx.azimuth = qmcProc();
+		loraTx.ledState = ledProc();
 
 		//!< control the gps ready?
 		if(gps.gpsState == POSITION_FIXED && gps.day != 0)
 		{
+			loraTx.gpsState = POSITION_FIXED;
+			loraTx.latitudeDegree = gps.latitudeDegree;
+			loraTx.latitudeMinute = gps.latitudeMinute;
+			loraTx.latitudeSecond = gps.latitudeSecond;
+
+			loraTx.longitudeDegree = gps.longitudeDegree;
+			loraTx.longitudeMinute = gps.longitudeMinute;
+			loraTx.longitudeSecond = gps.longitudeSecond;
+
+			loraTx.numberOfSatellite = gps.numberOfSatellite;
+
+			loraTx.speed = *((uint32_t*)&gps.speed);
+		}
+		else
+		{
+			loraTx.gpsState = NO_CONNECTION;
 		}
 
-		loraTx.azimuthLsb = (azim >> 0) & 0xFF;
-		loraTx.azimuthMsb = (azim >> 8) & 0xFF;
+		uint16_t crc = crcProc(&loraTx, sizeof(loraTx) - 2);
+		loraTx.crcLsb = (crc >> 0) & 0xFF;
+		loraTx.crcMsb = (crc >> 8) & 0xFF;
 
 		xQueueGenericSend(sensorDataQueue, &loraTx, 5, queueSEND_TO_FRONT);
-
-
 
 		vTaskDelayUntil(&xLastWakeTime, xFrequency);
 	}
 }
 
-uint16_t qmcProc()
+/**
+ * @brief take the azimuth angle
+ * @return azimuthn angle
+ */
+static uint16_t qmcProc()
 {
 	uint16_t azimuthAngle = 0;
 	if(UGV_isDataReady(&hqmc))
@@ -65,4 +81,34 @@ uint16_t qmcProc()
 	}
 
 	return azimuthAngle;
+}
+
+/**
+ * @brief set or reset the led status according the rf transmitter signal
+ * @return led status
+ */
+static LED_STATE ledProc()
+{
+	LED_STATE ledState = LEDS_OFF;
+
+	//!< set the leds
+	if((rcChannel_s.channel3>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel1<=(CHANNEL_UP + CHANNEL_ERROR)))
+	{
+		ledState = UGV_ledControl(&rcChannel_s);
+	}
+	else
+	{
+		NVIC_SystemReset();
+	}
+
+	return ledState;
+}
+
+/**
+ * @brief calculate the crc of the message up to len index
+ * @return 16 bit crc value
+ */
+static uint16_t crcProc(void * ptr, uint16_t len)
+{
+	return AE_pec15((uint8_t*)ptr, len);
 }

@@ -12,32 +12,45 @@
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "ledControl.h"
+#include "gps.h"
 
 typedef struct{
-	uint8_t azimuthLsb;
-	uint8_t azimuthMsb;
+	uint16_t azimuth;
 
-	uint8_t latitudeDegree;
-	uint8_t latitudeMinute;
-	uint8_t latitudeSecond;
+	uint8_t latitudeDegree;	//!< this variables are float convert them HEX form
+	uint8_t latitudeMinute;	//!< this variables are float convert them HEX form
+	float latitudeSecond;	//!< this variables are float convert them HEX form
 
-	uint8_t longitudeDegree;
-	uint8_t longitudeMinute;
-	uint8_t longitudeSecond;
+	uint8_t longitudeDegree;	//!< this variables are float convert them HEX form
+	uint8_t longitudeMinute;	//!< this variables are float convert them HEX form
+	float longitudeSecond;	//!< this variables are float convert them HEX form
 
 	uint8_t numberOfSatellite;
 
-	uint8_t height;
-	uint8_t speed;
-
-	uint8_t dummy1;
-	uint8_t dummy2;
-	uint8_t dummy3;
+	uint32_t speed;				//!< this variables are float convert them HEX form
 
 	LED_STATE ledState;
 
+	GPS_State gpsState;
+
 	uint8_t crcLsb;
 	uint8_t crcMsb;
+
+//	uint8_t azimuthLsb;
+//	uint8_t azimuthMsb;
+//
+//	uint8_t latitudeDegree;
+//	uint8_t latitudeMinute;
+//	uint8_t latitudeSecond;
+
+//	uint8_t longitudeDegree;
+//	uint8_t longitudeMinute;
+//	uint8_t longitudeSecond;
+
+//	uint8_t numberOfSatellite;
+
+//	uint8_t height;
+//	uint32_t speed;
 }LoraTransmit;
 
 

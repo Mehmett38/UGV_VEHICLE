@@ -50,7 +50,8 @@ UGV/Tasks/TaskMotorDrive/taskMotorDrive.o: \
  ../Core/Inc/main.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Database/database.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/GPS/gps.h
 ../UGV/Tasks/TaskMotorDrive/taskMotorDrive.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -102,3 +103,4 @@ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Driver
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Database/database.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/GPS/gps.h:

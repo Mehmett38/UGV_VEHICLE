@@ -14,7 +14,7 @@
 
 //<<<<<<<<<<<<<<<<<<-MACROS->>>>>>>>>>>>>>
 #define TASK_LORA_COM_PRIORITY					(UGV_TASK_PRIORITY_NORMAL)
-#define TX_TIMEOUT								(2)
+#define TX_TIMEOUT								(5)
 #define TX_STATUS								(0)
 #define RX_STATUS								(1)
 

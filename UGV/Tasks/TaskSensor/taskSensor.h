@@ -22,7 +22,5 @@ extern TaskHandle_t hTaskSensor_s;
 //<<<<<<<<<<<<<<-FUNCTION PROTOTYPES->>>>>>>>>>>>>>
 void taskSensor(void *arg);
 
-uint16_t qmcProc();
-
 
 #endif /* TASKS_TASKSENSOR_TASKSENSOR_H_ */

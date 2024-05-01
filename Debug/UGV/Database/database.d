@@ -43,7 +43,8 @@ UGV/Database/database.o: ../UGV/Database/database.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/RC/rcReceiver.h \
- ../Core/Inc/main.h
+ ../Core/Inc/main.h \
+ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/GPS/gps.h
 ../UGV/Database/database.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -89,3 +90,4 @@ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Driver
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/RC/rcReceiver.h:
 ../Core/Inc/main.h:
+C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/GPS/gps.h:

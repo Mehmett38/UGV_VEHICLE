@@ -1,3 +1,5 @@
 ../Drivers/CMSIS/Include/core_cm4.h:1938:34:__NVIC_SystemReset	1
-../UGV/Tasks/TaskSensor/taskSensor.c:22:6:taskSensor	2
-../UGV/Tasks/TaskSensor/taskSensor.c:62:10:qmcProc	2
+../UGV/Tasks/TaskSensor/taskSensor.c:28:6:taskSensor	3
+../UGV/Tasks/TaskSensor/taskSensor.c:75:17:qmcProc	2
+../UGV/Tasks/TaskSensor/taskSensor.c:90:18:ledProc	2
+../UGV/Tasks/TaskSensor/taskSensor.c:111:17:crcProc	1
