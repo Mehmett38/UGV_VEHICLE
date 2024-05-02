@@ -13,8 +13,6 @@
 TaskHandle_t hTaskLoraCom_s;
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
-uint8_t txBuffer[8];
-uint8_t rxBuffer[8];
 
 static LoraTransmit loraTx;
 static LoraTransmit loraRx;
@@ -39,12 +37,14 @@ void taskLoraCom(void *arg)
 	{
 		xQueueReceive(sensorDataQueue, &loraTx, 2);
 
+		//!< Transmit
 		txRxMutex = TX_STATUS;
 		ret = SX1278_LoRaEntryTx(&SX1278, sizeof(loraTx), TX_TIMEOUT);
 		retTx = SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&loraTx,
 				sizeof(loraTx), TX_TIMEOUT);
-		txRxMutex = RX_STATUS;
 
+		//!< Receive
+		txRxMutex = RX_STATUS;
 		ret = SX1278_LoRaEntryRx(&SX1278, sizeof(loraRx), TX_TIMEOUT);
 
 		vTaskDelayUntil(&xLastWakeTime, xFrequency);
@@ -59,7 +59,8 @@ void dioIrqCallback()
 {
 	if(txRxMutex == TX_STATUS)
 	{
-		return;
+		retTx = SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&loraTx,
+				sizeof(loraTx), TX_TIMEOUT);
 	}
 	else
 	{

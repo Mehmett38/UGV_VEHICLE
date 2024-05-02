@@ -108,8 +108,8 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Init scheduler */
-  osKernelInitialize();
-
+//  osKernelInitialize();
+//
 //  /* Call init function for freertos objects (in freertos.c) */
 //  MX_FREERTOS_Init();
 //
@@ -127,6 +127,7 @@ int main(void)
 
 	  ugvMain();
 	  break;
+
   }
   /* USER CODE END 3 */
 }
