@@ -12,6 +12,7 @@ UART_HandleTypeDef *gpsUart;
 RingBuff ringBuff;					// Storage the gps rx values
 uint8_t rxGps;
 GPS *_gps;
+uint32_t gpsIrqTime;
 
 //////////////////////////////////////////////////////////////
 /*
@@ -47,6 +48,7 @@ void GPS_Callback(void)
 	HAL_UART_Receive_IT(gpsUart, &rxGps, 1);
 	ringBuff.rxGps[HEAD_INCREASE] = rxGps;
 	if(rxGps == '\r')	GPS_Parse();
+	gpsIrqTime = HAL_GetTick();
 }
 
 /////////////////////////////////////////////////////////////

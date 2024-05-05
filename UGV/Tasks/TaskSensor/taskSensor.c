@@ -16,6 +16,8 @@
 static uint16_t qmcProc();
 static LED_STATE ledProc();
 static uint16_t crcProc(void * ptr, uint16_t len);
+volatile uint32_t gpsPreviousHead;
+extern uint32_t gpsIrqTime;
 
 //<<<<<<<<<<<<<<<<<<-GLOBAL VARIABLES->>>>>>>>>>>>>>
 TaskHandle_t hTaskSensor_s;
@@ -38,7 +40,7 @@ void taskSensor(void *arg)
 		loraTx.ledState = ledProc();
 
 		//!< control the gps ready?
-		if(gps.gpsState == POSITION_FIXED && gps.day != 0)
+		if(gps.gpsState == POSITION_FIXED && gps.day != 0 && ((HAL_GetTick() - gpsIrqTime) < 500))
 		{
 			loraTx.gpsState = POSITION_FIXED;
 			loraTx.latitudeDegree = gps.latitudeDegree;
@@ -57,6 +59,8 @@ void taskSensor(void *arg)
 		{
 			loraTx.gpsState = NO_CONNECTION;
 		}
+
+		gpsPreviousHead = ringBuff.head;
 
 		uint16_t crc = crcProc(&loraTx, sizeof(loraTx) - 2);
 		loraTx.crcLsb = (crc >> 0) & 0xFF;
@@ -77,7 +81,7 @@ static uint16_t qmcProc()
 	uint16_t azimuthAngle = 0;
 	if(UGV_isDataReady(&hqmc))
 	{
-		azimuthAngle = (uint16_t)((uint32_t)UGV_getAzimuth(&hqmc));
+		azimuthAngle = (uint16_t)UGV_getAzimuth(&hqmc);
 	}
 
 	return azimuthAngle;
