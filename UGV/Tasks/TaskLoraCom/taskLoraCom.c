@@ -24,7 +24,7 @@ static uint8_t txRxMutex = TX_STATUS;
 void taskLoraCom(void *arg)
 {
 	TickType_t xLastWakeTime = 0;
-	const TickType_t xFrequency = 25;
+	const TickType_t xFrequency = 35;
 	xLastWakeTime = xTaskGetTickCount();
 
 	//initialize lora module
