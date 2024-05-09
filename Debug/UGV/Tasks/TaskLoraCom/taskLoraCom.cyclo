@@ -1,2 +1,2 @@
-../UGV/Tasks/TaskLoraCom/taskLoraCom.c:24:6:taskLoraCom	1
-../UGV/Tasks/TaskLoraCom/taskLoraCom.c:58:6:dioIrqCallback	2
+../UGV/Tasks/TaskLoraCom/taskLoraCom.c:25:6:taskLoraCom	1
+../UGV/Tasks/TaskLoraCom/taskLoraCom.c:61:6:dioIrqCallback	2

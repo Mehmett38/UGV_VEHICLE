@@ -29,6 +29,7 @@
 #include "taskLoraCom.h"
 #include "taskSensor.h"
 #include "database.h"
+#include "iwdg.h"
 
 
 //<<<<<<<<<<<<<<-FUNCTION PROTOTYPES->>>>>>>>>>>>>>

@@ -52,14 +52,15 @@ void ugvMain(void)
 void ugvSystemInit()
 {
 	  /* USER CODE BEGIN 2 */
-	  UGV_cameraServoInit(&htim12, TIM_CHANNEL_1);	//!< camera servo timer init
-	  UGV_rcReceiverInit();							//!< enable rc receiver timer interrupt
-	  UGV_motorInit();								//!< enable motor driver PWM timers
-	  qmcInit(&hi2c1);								//!< enable i2c to read magnetometer
-	  init_PEC15_Table();
-	  sx1278Init(&SX1278_hw, &SX1278);
-	  databaseQueueInit(10, sizeof(LoraTransmit));	//!< sensor database queue
-	  GPS_Init(&huart3, &gps);
+	HAL_IWDG_Init(&hiwdg);
+	UGV_cameraServoInit(&htim12, TIM_CHANNEL_1);	//!< camera servo timer init
+	UGV_rcReceiverInit();							//!< enable rc receiver timer interrupt
+	UGV_motorInit();								//!< enable motor driver PWM timers
+	qmcInit(&hi2c1);								//!< enable i2c to read magnetometer
+	init_PEC15_Table();
+	sx1278Init(&SX1278_hw, &SX1278);
+	databaseQueueInit(10, sizeof(LoraTransmit));	//!< sensor database queue
+	GPS_Init(&huart3, &gps);
 }
 
 /**

@@ -7,8 +7,7 @@
 
 
 #include "MotorDrive.h"
-
-
+#include "iwdg.h"
 
 
 //<<<<<<<<<<<<<<<<<-FUNCTIONS PROTOTYPES->>>>>>>>>>>>>>>>>>
@@ -73,7 +72,10 @@ void UGV_motorDrive(RcChannel * rcChannel, float azimuthAngle)
 	{
 		if((rcChannel->channel2<=(CHANNEL_DOWN + CHANNEL_ERROR)) && (rcChannel->channel1>=(CHANNEL_UP - CHANNEL_ERROR)))
 		{
-			while(!((rcChannel->channel1>=CHANNEL_MIDDLE) && (rcChannel->channel2>=CHANNEL_MIDDLE)));
+			while(!((rcChannel->channel1>=CHANNEL_MIDDLE) && (rcChannel->channel2>=CHANNEL_MIDDLE)))
+			{
+				HAL_IWDG_Refresh(&hiwdg);
+			}
 			startFlag = 1;
 		}
 	}

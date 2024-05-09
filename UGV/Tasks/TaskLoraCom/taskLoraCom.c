@@ -8,6 +8,7 @@
 
 #include "taskLoraCom.h"
 #include "database.h"
+#include "iwdg.h"
 
 //<<<<<<<<<<<<<<<<<<-GLOBAL VARIABLES->>>>>>>>>>>>>>
 TaskHandle_t hTaskLoraCom_s;
@@ -46,6 +47,8 @@ void taskLoraCom(void *arg)
 		//!< Receive
 		txRxMutex = RX_STATUS;
 		ret = SX1278_LoRaEntryRx(&SX1278, sizeof(loraRx), TX_TIMEOUT);
+
+		HAL_IWDG_Refresh(&hiwdg);
 
 		vTaskDelayUntil(&xLastWakeTime, xFrequency);
 	}
