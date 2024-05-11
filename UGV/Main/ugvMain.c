@@ -89,7 +89,7 @@ static void qmcInit(I2C_HandleTypeDef *hi2c)
 	}
 	//magnetic declination of my city
 	//you can learn https://www.magnetic-declination.com/
-	UGV_setMagneticDelination(20, 0);
+	UGV_setMagneticDelination(60, 0);
 }
 
 /**

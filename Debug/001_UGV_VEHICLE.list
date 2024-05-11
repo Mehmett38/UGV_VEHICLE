@@ -32986,9 +32986,9 @@ static void qmcInit(I2C_HandleTypeDef *hi2c)
 	}
 	//magnetic declination of my city
 	//you can learn https://www.magnetic-declination.com/
-	UGV_setMagneticDelination(20, 0);
+	UGV_setMagneticDelination(60, 0);
  800d2e4:	2100      	movs	r1, #0
- 800d2e6:	2014      	movs	r0, #20
+ 800d2e6:	203c      	movs	r0, #60	; 0x3c
  800d2e8:	f7ff f814 	bl	800c314 <UGV_setMagneticDelination>
 }
  800d2ec:	bf00      	nop
