@@ -33068,8 +33068,8 @@ void taskLoraCom(void *arg)
 	TickType_t xLastWakeTime = 0;
  800d358:	2300      	movs	r3, #0
  800d35a:	60bb      	str	r3, [r7, #8]
-	const TickType_t xFrequency = 35;
- 800d35c:	2323      	movs	r3, #35	; 0x23
+	const TickType_t xFrequency = 25;
+ 800d35c:	2319      	movs	r3, #25
  800d35e:	60fb      	str	r3, [r7, #12]
 	xLastWakeTime = xTaskGetTickCount();
  800d360:	f7fb fab6 	bl	80088d0 <xTaskGetTickCount>
