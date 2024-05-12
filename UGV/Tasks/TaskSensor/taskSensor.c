@@ -43,6 +43,11 @@ void taskSensor(void *arg)
 
 		//!< get the gyro inf
 		MPU6050_Read_All(&hi2c3, &MPU6050);
+		loraTx.Ax = MPU6050.Ax;
+		loraTx.Ay = MPU6050.Ay;
+		loraTx.Temperature = MPU6050.Temperature;
+		loraTx.KalmanAngleX = MPU6050.KalmanAngleX;
+		loraTx.KalmanAngleY = MPU6050.KalmanAngleY;
 
 		//!< control the gps ready?
 		if(gps.gpsState == POSITION_FIXED && gps.day != 0 && ((HAL_GetTick() - gpsIrqTime) < 500))
@@ -57,8 +62,15 @@ void taskSensor(void *arg)
 			loraTx.longitudeSecond = gps.longitudeSecond;
 
 			loraTx.numberOfSatellite = gps.numberOfSatellite;
+			loraTx.second = gps.second;
+			loraTx.minute = gps.minute;
+			loraTx.hour = gps.hour;
+			loraTx.day = gps.day;
+			loraTx.month = gps.month;
+			loraTx.locationLat = gps.locationLat;
+			loraTx.locationLong = gps.locationLong;
 
-			loraTx.speed = *((uint32_t*)&gps.speed);
+			loraTx.speed = gps.speed;
 		}
 		else
 		{
