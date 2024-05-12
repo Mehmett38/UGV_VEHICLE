@@ -12,6 +12,7 @@
 #include "gps.h"
 #include "crc15.h"
 #include "mpu6050.h"
+#include "QMC/Kalman/kalman_filter.h"
 
 //<<<<<<<<<<<<<<<<<<-STATIC FUNCTIONS->>>>>>>>>>>>>>
 static uint16_t qmcProc();
@@ -27,6 +28,8 @@ extern LoraTransmit loraTx;
 extern GPS gps;
 uint16_t azim;
 MPU6050_t MPU6050;
+kalman_state hKalmanXangle;
+kalman_state hKalmanYangle;
 
 //<<<<<<<<<<<<<<-FUNCTION PROTOTYPES->>>>>>>>>>>>>>
 void taskSensor(void *arg)
@@ -34,6 +37,9 @@ void taskSensor(void *arg)
 	TickType_t xLastWakeTime = 0;
 	const TickType_t xFrequency = 10;
 	xLastWakeTime = xTaskGetTickCount();
+
+	kalman1_init(&hKalmanXangle, 0, 5e0);
+	kalman1_init(&hKalmanYangle, 0, 5e0);
 
 	for(;;)
 	{
@@ -46,8 +52,9 @@ void taskSensor(void *arg)
 		loraTx.Ax = MPU6050.Ax;
 		loraTx.Ay = MPU6050.Ay;
 		loraTx.Temperature = MPU6050.Temperature;
-		loraTx.KalmanAngleX = MPU6050.KalmanAngleX;
-		loraTx.KalmanAngleY = MPU6050.KalmanAngleY;
+
+		loraTx.KalmanAngleX = kalman1_filter(&hKalmanXangle, MPU6050.KalmanAngleX);
+		loraTx.KalmanAngleY = kalman1_filter(&hKalmanYangle, MPU6050.KalmanAngleY);
 
 		//!< control the gps ready?
 		if(gps.gpsState == POSITION_FIXED && gps.day != 0 && ((HAL_GetTick() - gpsIrqTime) < 500))
@@ -79,7 +86,7 @@ void taskSensor(void *arg)
 
 		gpsPreviousHead = ringBuff.head;
 
-		uint16_t crc = crcProc(&loraTx, sizeof(loraTx) - 2);
+		uint16_t crc = crcProc(&loraTx, sizeof(loraTx) - 4);
 		loraTx.crcLsb = (crc >> 0) & 0xFF;
 		loraTx.crcMsb = (crc >> 8) & 0xFF;
 

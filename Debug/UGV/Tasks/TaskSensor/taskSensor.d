@@ -56,7 +56,8 @@ UGV/Tasks/TaskSensor/taskSensor.o: ../UGV/Tasks/TaskSensor/taskSensor.c \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/PID/PID.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/crc/crc15.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/Mpu6050/mpu6050.h \
- ../Core/Inc/i2c.h ../Core/Inc/main.h
+ ../Core/Inc/i2c.h ../Core/Inc/main.h \
+ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/QMC/Kalman/kalman_filter.h
 ../UGV/Tasks/TaskSensor/taskSensor.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -116,3 +117,4 @@ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Driver
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/Mpu6050/mpu6050.h:
 ../Core/Inc/i2c.h:
 ../Core/Inc/main.h:
+C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/QMC/Kalman/kalman_filter.h:

@@ -21,7 +21,10 @@ void taskMotorDrive(void *arg)
 
 	for(;;)
 	{
-		  if((rcChannel_s.channel1>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel1<=(CHANNEL_UP + CHANNEL_ERROR)))
+		  if((rcChannel_s.channel1>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel1<=(CHANNEL_UP + CHANNEL_ERROR)) &&
+		     (rcChannel_s.channel2>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel2<=(CHANNEL_UP + CHANNEL_ERROR)) &&
+			 (rcChannel_s.channel3>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel3<=(CHANNEL_UP + CHANNEL_ERROR)) &&
+			 (rcChannel_s.channel4>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel4<=(CHANNEL_UP + CHANNEL_ERROR)))
 		  {
 			  UGV_motorDrive(&rcChannel_s, azimuthAngle);
 		  }

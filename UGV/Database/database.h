@@ -27,8 +27,8 @@ typedef struct{
 	uint8_t second;
 	float longitudeSecond;	//!< this variables are float convert them HEX form
 
-
 	float speed;				//!< this variables are float convert them HEX form
+
 	float Ax;
 	float Ay;
 
