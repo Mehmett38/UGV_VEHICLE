@@ -30,6 +30,7 @@
 #include "taskSensor.h"
 #include "database.h"
 #include "iwdg.h"
+#include "mpu6050.h"
 
 
 //<<<<<<<<<<<<<<-FUNCTION PROTOTYPES->>>>>>>>>>>>>>

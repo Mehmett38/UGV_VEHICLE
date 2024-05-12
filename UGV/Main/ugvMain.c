@@ -61,6 +61,7 @@ void ugvSystemInit()
 	sx1278Init(&SX1278_hw, &SX1278);
 	databaseQueueInit(10, sizeof(LoraTransmit));	//!< sensor database queue
 	GPS_Init(&huart3, &gps);
+	while (MPU6050_Init(&hi2c3) == 1);
 }
 
 /**

@@ -11,6 +11,7 @@
 #include "MotorDrive.h"
 #include "gps.h"
 #include "crc15.h"
+#include "mpu6050.h"
 
 //<<<<<<<<<<<<<<<<<<-STATIC FUNCTIONS->>>>>>>>>>>>>>
 static uint16_t qmcProc();
@@ -25,6 +26,7 @@ extern Qmc hqmc;
 extern LoraTransmit loraTx;
 extern GPS gps;
 uint16_t azim;
+MPU6050_t MPU6050;
 
 //<<<<<<<<<<<<<<-FUNCTION PROTOTYPES->>>>>>>>>>>>>>
 void taskSensor(void *arg)
@@ -38,6 +40,9 @@ void taskSensor(void *arg)
 		//!< get azimuth from the qmc5883
 		loraTx.azimuth = qmcProc();
 		loraTx.ledState = ledProc();
+
+		//!< get the gyro inf
+		MPU6050_Read_All(&hi2c3, &MPU6050);
 
 		//!< control the gps ready?
 		if(gps.gpsState == POSITION_FIXED && gps.day != 0 && ((HAL_GetTick() - gpsIrqTime) < 500))

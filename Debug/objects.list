@@ -46,6 +46,7 @@
 "./UGV/Database/database.o"
 "./UGV/Drivers/GPS/gps.o"
 "./UGV/Drivers/MotorDriver/MotorDrive.o"
+"./UGV/Drivers/Mpu6050/mpu6050.o"
 "./UGV/Drivers/PID/pid.o"
 "./UGV/Drivers/QMC/Kalman/kalman_filter.o"
 "./UGV/Drivers/QMC/QMC5883/qmc5883.o"

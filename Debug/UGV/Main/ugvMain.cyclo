@@ -1,4 +1,4 @@
 ../UGV/Main/ugvMain.c:22:6:ugvMain	4
-../UGV/Main/ugvMain.c:52:6:ugvSystemInit	1
-../UGV/Main/ugvMain.c:71:13:qmcInit	2
-../UGV/Main/ugvMain.c:101:13:sx1278Init	1
+../UGV/Main/ugvMain.c:52:6:ugvSystemInit	2
+../UGV/Main/ugvMain.c:72:13:qmcInit	2
+../UGV/Main/ugvMain.c:102:13:sx1278Init	1

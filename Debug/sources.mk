@@ -32,6 +32,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
 UGV/Database \
 UGV/Drivers/GPS \
 UGV/Drivers/MotorDriver \
+UGV/Drivers/Mpu6050 \
 UGV/Drivers/PID \
 UGV/Drivers/QMC/Kalman \
 UGV/Drivers/QMC/QMC5883 \

@@ -15,9 +15,9 @@
 
 //<<<<<<<<<<<<<<<<<<-GLOBAL VARIABLES->>>>>>>>>>>>>>>>>>
 //!< time global variable
-extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim8;
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<-MACROS->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #define CHANNEL_DOWN				(1100)	//!< controller sub adc read value
@@ -28,8 +28,8 @@ extern TIM_HandleTypeDef htim4;
 
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<-FUNCTION MACROS->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#define RIGHT_MOTOR_FORWARD(x)		(__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, x))
-#define RIGHT_MOTOR_BACKWARD(x)		(__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, x))
+#define RIGHT_MOTOR_FORWARD(x)		(__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_3, x))
+#define RIGHT_MOTOR_BACKWARD(x)		(__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, x))
 #define LEFT_MOTOR_BACKWARD(x)		(__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, x))
 #define LEFT_MOTOR_FORWARD(x)		(__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, x))
 

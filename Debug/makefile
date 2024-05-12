@@ -22,6 +22,7 @@ RM := rm -rf
 -include UGV/Drivers/QMC/QMC5883/subdir.mk
 -include UGV/Drivers/QMC/Kalman/subdir.mk
 -include UGV/Drivers/PID/subdir.mk
+-include UGV/Drivers/Mpu6050/subdir.mk
 -include UGV/Drivers/MotorDriver/subdir.mk
 -include UGV/Drivers/GPS/subdir.mk
 -include UGV/Database/subdir.mk
