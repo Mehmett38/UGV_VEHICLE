@@ -58,6 +58,7 @@ UGV/Main/ugvMain.o: ../UGV/Main/ugvMain.c ../UGV/Main/ugvMain.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Tasks/TaskMotorDrive/taskMotorDrive.h \
+ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/Servo/cameraServo.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Tasks/TaskLoraCom/taskLoraCom.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Tasks/TaskSensor/taskSensor.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Database/database.h \
@@ -128,6 +129,7 @@ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Driver
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Tasks/TaskMotorDrive/taskMotorDrive.h:
+C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/Servo/cameraServo.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Tasks/TaskLoraCom/taskLoraCom.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Tasks/TaskSensor/taskSensor.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Database/database.h:

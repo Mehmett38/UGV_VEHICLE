@@ -49,6 +49,8 @@ UGV/Tasks/TaskMotorDrive/taskMotorDrive.o: \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/PID/PID.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/ledControl/ledControl.h \
  ../Core/Inc/main.h \
+ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/Servo/cameraServo.h \
+ ../Core/Inc/tim.h ../Core/Inc/main.h \
  C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Database/database.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
@@ -101,6 +103,9 @@ C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Driver
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/RcFilter/rcFilter.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/PID/PID.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/ledControl/ledControl.h:
+../Core/Inc/main.h:
+C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Drivers/Servo/cameraServo.h:
+../Core/Inc/tim.h:
 ../Core/Inc/main.h:
 C:/Users/Mehmet\ Dincer/Desktop/Bitirme/Kodlar/gomulu/001_UGV_VEHICLE/UGV/Database/database.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:

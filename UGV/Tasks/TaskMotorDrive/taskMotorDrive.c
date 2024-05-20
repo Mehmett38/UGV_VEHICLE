@@ -27,6 +27,7 @@ void taskMotorDrive(void *arg)
 			 (rcChannel_s.channel4>=(CHANNEL_DOWN-CHANNEL_ERROR)) && (rcChannel_s.channel4<=(CHANNEL_UP + CHANNEL_ERROR)))
 		  {
 			  UGV_motorDrive(&rcChannel_s, azimuthAngle);
+			  UGV_cameraServoSetAngle(&rcChannel_s);
 		  }
 		  else
 		  {

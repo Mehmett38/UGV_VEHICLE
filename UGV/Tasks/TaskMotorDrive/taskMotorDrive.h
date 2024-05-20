@@ -16,6 +16,7 @@
 #include "MotorDrive.h"
 #include "rcReceiver.h"
 #include "ledControl.h"
+#include "Servo/cameraServo.h"
 
 //<<<<<<<<<<<<<<<<<<-MACROS->>>>>>>>>>>>>>>>>
 #define TASK_MOT_DRIVE_PRIORITY					(UGV_TASK_PRIORITY_HIGH)
